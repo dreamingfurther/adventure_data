@@ -6,6 +6,7 @@ gem 'rails', '4.2.3'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'nokogiri', '~> 1.6.8.rc2'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
@@ -26,4 +27,3 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
-
