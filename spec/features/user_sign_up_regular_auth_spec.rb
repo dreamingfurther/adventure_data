@@ -23,15 +23,8 @@ feature 'Autherization', js: true do
   end
 
   scenario 'User signs in with regular auth', js: true do
-    create(:user, email: 'test@test.com', password: 'password1234')
-    visit root_path
-
-    find('.collapsible-header', :text => 'Sign In').click
-    expect(page).to have_css '.sign-in-form'
-    fill_in 'Email', with: 'test@test.com'
-    fill_in 'Password', with: 'password1234'
-
-    click_on 'Log in'
+    user = create(:user)
+    sign_in_as(user)
     expect(page).to have_content 'Hello World'
   end
 end
