@@ -35,3 +35,13 @@ RSpec.configure do |config|
      DatabaseCleaner.clean
    end
 end
+
+def sign_in_as(user)
+  visit root_path
+  find('.collapsible-header', :text => 'Sign In').click
+  within('.sign-in-form') do
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_on 'Log in'
+  end
+end

@@ -1,0 +1,7 @@
+.container
+  .row
+    .col.s12.m6.offset-m3
+      .valign-wrapper(style="height:70vh; ")
+        .valign.center-align(style="width: 100%;")
+          %h1 Admin Dashboard
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete
