@@ -6,6 +6,10 @@ require 'capybara/poltergeist'
 require "database_cleaner"
 
 Capybara.javascript_driver = :poltergeist
+options = {js_errors: false}
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
